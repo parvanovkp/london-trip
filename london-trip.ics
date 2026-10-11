@@ -124,11 +124,12 @@ UID:london-2026-09@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261015T143000
 DTEND;TZID=Europe/London:20261015T163000
-SUMMARY:🛶 Regent's Canal walk → Little Venice
-LOCATION:Regent's Canal\, Camden Lock\, London
-DESCRIPTION:~4 km towpath past the zoo and Regent's Park. Primrose Hill det
- our +20 min. Then ~25 min walk to Portobello Road.\nMap: https://maps.goog
- le.com/?q=Little+Venice+London
+SUMMARY:🌳 Primrose Hill + Regent's Park
+LOCATION:Primrose Hill\, London
+DESCRIPTION:15 min walk up from Camden Lock for the skyline view. 15:15 dow
+ n through Regent's Park (zoo\, Queen Mary's Gardens) to Baker Street (~40 
+ min)\, then Hammersmith & City line to Ladbroke Grove.\nMap: https://maps.
+ google.com/?q=Primrose+Hill+London
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
