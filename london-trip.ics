@@ -110,33 +110,47 @@ END:VEVENT
 BEGIN:VEVENT
 UID:london-2026-08@kparvanov.com
 DTSTAMP:20261011T190000Z
-DTSTART;TZID=Europe/London:20261015T111500
-DTEND;TZID=Europe/London:20261015T143000
-SUMMARY:🛍️ Camden Market + Cyberdog + The Dark Horse
-LOCATION:Camden Market\, London
-DESCRIPTION:10:45 Aldgate → King's Cross (Circle/Metropolitan)\, then Nor
- thern line to Camden Town. Camden Lock\, Stables Market\, Cyberdog\, lunch
-  from the stalls. 13:30 drink at The Dark Horse (rooftop terrace).\nMap: h
- ttps://maps.google.com/?q=Camden+Market
+DTSTART;TZID=Europe/London:20261015T104000
+DTEND;TZID=Europe/London:20261015T131500
+SUMMARY:🌉 Tower Bridge → Borough Market → Bankside
+LOCATION:Tower Bridge\, London
+DESCRIPTION:Tower Bridge\, coffee in Shad Thames\, lunch at Borough Market 
+ (from 11:15)\, then Southwark Cathedral\, the Globe\, Tate Modern and the 
+ Millennium Bridge to St Paul's.\nMap: https://maps.google.com/?q=Borough+M
+ arket
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:london-2026-09@kparvanov.com
 DTSTAMP:20261011T190000Z
-DTSTART;TZID=Europe/London:20261015T143000
-DTEND;TZID=Europe/London:20261015T163000
-SUMMARY:🌳 Primrose Hill + Regent's Park
-LOCATION:Primrose Hill\, London
-DESCRIPTION:15 min walk up from Camden Lock for the skyline view. 15:15 dow
- n through Regent's Park (zoo\, Queen Mary's Gardens) to Baker Street (~40 
- min)\, then Hammersmith & City line to Ladbroke Grove.\nMap: https://maps.
- google.com/?q=Primrose+Hill+London
+DTSTART;TZID=Europe/London:20261015T131500
+DTEND;TZID=Europe/London:20261015T144500
+SUMMARY:🎨 Spitalfields + Brick Lane
+LOCATION:Old Spitalfields Market\, London
+DESCRIPTION:Central line St Paul's → Liverpool Street. Thursday antiques 
+ and vintage market\, street art on Brick Lane\, Hanbury St and Redchurch S
+ t. Detroit Pizza\, 75 Commercial St.\nMap: https://maps.google.com/?q=Old+
+ Spitalfields+Market
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:london-2026-10@kparvanov.com
 DTSTAMP:20261011T190000Z
-DTSTART;TZID=Europe/London:20261015T163000
+DTSTART;TZID=Europe/London:20261015T144500
+DTEND;TZID=Europe/London:20261015T170000
+SUMMARY:🌳 Primrose Hill + Regent's Park
+LOCATION:Primrose Hill\, London
+DESCRIPTION:Walk to Moorgate\, Northern line to Chalk Farm (Edgware train\,
+  ~25 min). 15:30 Primrose Hill view. 16:00 down through Regent's Park to B
+ aker Street (~40 min)\, then Hammersmith & City line to Ladbroke Grove.\nI
+ f it rains: skip this and go straight to Ladbroke Grove from Liverpool Str
+ eet.\nMap: https://maps.google.com/?q=Primrose+Hill+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-11@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261015T170000
 DTEND;TZID=Europe/London:20261015T190000
 SUMMARY:🏠 Notting Hill streets
 LOCATION:Portobello Road\, London
@@ -146,7 +160,7 @@ DESCRIPTION:Lancaster Road\, St Luke's Mews\, Elgin Crescent. Street market
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:london-2026-11@kparvanov.com
+UID:london-2026-12@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261015T190000
 DTEND;TZID=Europe/London:20261015T213000
@@ -159,47 +173,47 @@ DESCRIPTION:Pick one: Permit Room (186 Portobello Rd)\, Speedboat Bar (191
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:london-2026-12@kparvanov.com
-DTSTAMP:20261011T190000Z
-DTSTART;TZID=Europe/London:20261016T094500
-DTEND;TZID=Europe/London:20261016T124500
-SUMMARY:🌉 Tower Bridge → Borough Market → Bankside
-LOCATION:Tower Bridge\, London
-DESCRIPTION:09:45 check out\, bag into Wombat's luggage room. Tower Bridge\
- , Shad Thames coffee\, Borough Market\, Southwark Cathedral\, the Globe\, 
- Tate Modern\, Millennium Bridge to St Paul's.\nMap: https://maps.google.co
- m/?q=Borough+Market
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 UID:london-2026-13@kparvanov.com
 DTSTAMP:20261011T190000Z
-DTSTART;TZID=Europe/London:20261016T130000
-DTEND;TZID=Europe/London:20261016T144500
-SUMMARY:🏙️ Lunch with a view
-LOCATION:20 Fenchurch Street\, London
-DESCRIPTION:Sky Garden (Darwin Brasserie\, level 36\; booking = entry) or D
- uck & Waffle (110 Bishopsgate\, 40th floor). Optional after: Horizon 22.\n
- Map: https://maps.google.com/?q=Sky+Garden+20+Fenchurch+Street
+DTSTART;TZID=Europe/London:20261016T103000
+DTEND;TZID=Europe/London:20261016T124500
+SUMMARY:🛍️ Camden with Sashi & Laura
+LOCATION:Camden Market\, London
+DESCRIPTION:09:45 check out\, bag into Wombat's luggage room. 10:00 Aldgate
+  → King's Cross (Circle/Metropolitan)\, Northern line to Camden Town. Ca
+ mden Lock\, Stables Market\, Cyberdog. 12:15 optional drink at The Dark Ho
+ rse. 12:45 Northern line straight to Bank (train via Bank\, not Charing Cr
+ oss).\nMap: https://maps.google.com/?q=Camden+Market
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:london-2026-14@kparvanov.com
 DTSTAMP:20261011T190000Z
-DTSTART;TZID=Europe/London:20261016T151500
-DTEND;TZID=Europe/London:20261016T171500
-SUMMARY:🎨 Leadenhall → Spitalfields → Shoreditch
-LOCATION:Old Spitalfields Market\, London
-DESCRIPTION:Leadenhall Market\, Old Spitalfields\, street art on Brick Lane
- \, Hanbury St and Redchurch St. Detroit Pizza\, 75 Commercial St. 17:15 co
- llect the bag at Wombat's.\nMap: https://maps.google.com/?q=Old+Spitalfiel
- ds+Market
+DTSTART;TZID=Europe/London:20261016T131500
+DTEND;TZID=Europe/London:20261016T144500
+SUMMARY:🏙️ Lunch with a view
+LOCATION:20 Fenchurch Street\, London
+DESCRIPTION:Sky Garden (Darwin Brasserie\, level 36\; booking = entry) or D
+ uck & Waffle (110 Bishopsgate\, 40th floor). A few minutes from Bank.\nMap
+ : https://maps.google.com/?q=Sky+Garden+20+Fenchurch+Street
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 UID:london-2026-15@kparvanov.com
 DTSTAMP:20261011T190000Z
-DTSTART;TZID=Europe/London:20261016T174500
+DTSTART;TZID=Europe/London:20261016T144500
+DTEND;TZID=Europe/London:20261016T163000
+SUMMARY:🔭 Horizon 22 (optional) + Leadenhall Market
+LOCATION:22 Bishopsgate\, London
+DESCRIPTION:58th floor\, free with a booked slot. Then Leadenhall Market. 1
+ 6:30 collect the bag at Wombat's (~15 min walk).\nMap: https://maps.google
+ .com/?q=Horizon+22+Bishopsgate
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-16@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261016T171500
 DTEND;TZID=Europe/London:20261016T200000
 SUMMARY:🍺 Dinner: Prospect of Whitby
 LOCATION:Prospect of Whitby\, 57 Wapping Wall\, London E1W 3SH
@@ -210,7 +224,7 @@ DESCRIPTION:Riverside pub with a terrace. ~20 min walk from Wombat's\, or O
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:london-2026-16@kparvanov.com
+UID:london-2026-17@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261017T090000
 DTEND;TZID=Europe/London:20261017T124500
@@ -224,7 +238,7 @@ DESCRIPTION:With Sashi and Laura. 09:00 leave Bromley (~1h30). Parking £6
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:london-2026-17@kparvanov.com
+UID:london-2026-18@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261017T124500
 DTEND;TZID=Europe/London:20261017T141500
@@ -236,7 +250,7 @@ DESCRIPTION:On the beach\, 10 min from the cliffs car park. Sashi can book
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:london-2026-18@kparvanov.com
+UID:london-2026-19@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261017T150000
 DTEND;TZID=Europe/London:20261017T190000
@@ -250,7 +264,7 @@ DESCRIPTION:~35 min drive from St Margaret's Bay. Cathedral Sat 10:00–17:
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:london-2026-19@kparvanov.com
+UID:london-2026-20@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261018T073000
 DTEND;TZID=Europe/London:20261018T091500
@@ -260,7 +274,7 @@ DESCRIPTION:Sashi drives\, ~1h30. Breakfast and check out at 07:00.
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-UID:london-2026-20@kparvanov.com
+UID:london-2026-21@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261018T113000
 DTEND;TZID=Europe/London:20261018T120000
