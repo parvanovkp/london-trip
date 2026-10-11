@@ -86,12 +86,13 @@ BEGIN:VEVENT
 UID:london-2026-06@kparvanov.com
 DTSTAMP:20261011T190000Z
 DTSTART;TZID=Europe/London:20261014T190000
-DTEND;TZID=Europe/London:20261014T213000
+DTEND;TZID=Europe/London:20261014T210000
 SUMMARY:🍽️ Dinner with Sashi & Desi: Marquis of Westminster
 LOCATION:Marquis of Westminster\, 50 Warwick Way\, London SW1V 1RY
-DESCRIPTION:Embankment → Victoria (District/Circle\, 3 stops)\, then 8 mi
- n walk. Booking: OpenTable or 020 7592 0249.\nMap: https://maps.google.com
- /?q=Marquis+of+Westminster+50+Warwick+Way+London
+DESCRIPTION:Booked for 4 under Sashi's name\, 19:00–21:00. Table held onl
+ y 15 min: leave Chinatown by 18:30. Embankment → Victoria (District/Circ
+ le\, 3 stops)\, then 8 min walk.\nMap: https://maps.google.com/?q=Marquis+
+ of+Westminster+50+Warwick+Way+London
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
