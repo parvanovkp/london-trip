@@ -143,8 +143,10 @@ LOCATION:Primrose Hill\, London
 DESCRIPTION:Walk to Moorgate\, Northern line to Chalk Farm (Edgware train\,
   ~25 min). 15:30 Primrose Hill view. 16:00 down through Regent's Park to B
  aker Street (~40 min)\, then Hammersmith & City line to Ladbroke Grove.\nI
- f it rains: skip this and go straight to Ladbroke Grove from Liverpool Str
- eet.\nMap: https://maps.google.com/?q=Primrose+Hill+London
+ f a High Barnet train comes: ride to Camden Town and walk ~20 min.\nLong d
+ ay: if flagging\, drop Brick Lane first\, then this stop. If it rains: ski
+ p this and go straight to Ladbroke Grove from Liverpool Street.\nMap: http
+ s://maps.google.com/?q=Primrose+Hill+London
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
@@ -218,9 +220,10 @@ DTEND;TZID=Europe/London:20261016T200000
 SUMMARY:🍺 Dinner: Prospect of Whitby
 LOCATION:Prospect of Whitby\, 57 Wapping Wall\, London E1W 3SH
 DESCRIPTION:Riverside pub with a terrace. ~20 min walk from Wombat's\, or O
- verground Shadwell → Wapping. ~20:00 to Bromley together (Premier Inn\, 
- Simpsons Road).\nMap: https://maps.google.com/?q=Prospect+of+Whitby+Wappin
- g
+ verground Shadwell → Wapping. ~20:00 to Bromley together: taxi\, or Towe
+ r Hill → Blackfriars (District/Circle) and direct train to Bromley South
+  (~36 min\, last 23:46). Check with Sashi.\nMap: https://maps.google.com/?
+ q=Prospect+of+Whitby+Wapping
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
