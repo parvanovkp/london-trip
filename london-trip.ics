@@ -1,0 +1,269 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Parvanov//London Trip 2026//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:London 13–18 Oct
+X-WR-TIMEZONE:Europe/London
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:london-2026-01@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261013T181500
+DTEND;TZID=Europe/London:20261013T201500
+SUMMARY:🛬 Land at Stansted → Wombat's
+LOCATION:London Stansted Airport
+DESCRIPTION:Buy the Stansted Express ticket at the station (~£20.70). 48 m
+ in to Liverpool Street\, then 20 min walk to Wombat's\, 7 Dock Street E1.\
+ nMap: https://maps.google.com/?q=Wombat%27s+City+Hostel+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-02@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261013T203000
+DTEND;TZID=Europe/London:20261013T220000
+SUMMARY:🍛 Dinner: Brick Lane or the hostel bar
+LOCATION:Brick Lane\, London
+DESCRIPTION:Then Tower Bridge lit up\, 10 min from the hostel.\nMap: https:
+ //maps.google.com/?q=Brick+Lane+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-03@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261014T093000
+DTEND;TZID=Europe/London:20261014T121500
+SUMMARY:🦕 Natural History Museum
+LOCATION:Natural History Museum\, Cromwell Road\, London
+DESCRIPTION:09:30 Tower Hill → South Kensington (District/Circle). Free t
+ imed slot 10:00. Hintze Hall and the dinosaurs first.\nMap: https://maps.g
+ oogle.com/?q=Natural+History+Museum+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-04@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261014T121500
+DTEND;TZID=Europe/London:20261014T161500
+SUMMARY:🚶 Albert Hall → Hyde Park → Buckingham Palace → Westminste
+ r
+LOCATION:Hyde Park\, London
+DESCRIPTION:Royal Albert Hall + Albert Memorial\, lunch in South Ken\, Kens
+ ington Gardens → Hyde Park → Hyde Park Corner\, Buckingham Palace via 
+ Constitution Hill\, St James's Park\, Big Ben\, Westminster Abbey.\nMap: h
+ ttps://maps.google.com/?q=Buckingham+Palace
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-05@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261014T161500
+DTEND;TZID=Europe/London:20261014T183000
+SUMMARY:🖼️ National Gallery → Leicester Square → Chinatown
+LOCATION:National Gallery\, Trafalgar Square\, London
+DESCRIPTION:Free\, open to 18:00.\nMap: https://maps.google.com/?q=National
+ +Gallery+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-06@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261014T190000
+DTEND;TZID=Europe/London:20261014T213000
+SUMMARY:🍽️ Dinner with Sashi & Desi: Marquis of Westminster
+LOCATION:Marquis of Westminster\, 50 Warwick Way\, London SW1V 1RY
+DESCRIPTION:Embankment → Victoria (District/Circle\, 3 stops)\, then 8 mi
+ n walk. Booking: OpenTable or 020 7592 0249.\nMap: https://maps.google.com
+ /?q=Marquis+of+Westminster+50+Warwick+Way+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-07@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261015T100000
+DTEND;TZID=Europe/London:20261015T104500
+SUMMARY:🌿 The Garden at 120
+LOCATION:120 Fenchurch Street\, London EC3M 5BA
+DESCRIPTION:Free rooftop garden from Laura's list. No booking\, airport-sty
+ le security. 10 min walk from Wombat's.\nMap: https://maps.google.com/?q=T
+ he+Garden+at+120+Fenchurch+Street
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-08@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261015T111500
+DTEND;TZID=Europe/London:20261015T143000
+SUMMARY:🛍️ Camden Market + Cyberdog + The Dark Horse
+LOCATION:Camden Market\, London
+DESCRIPTION:10:45 Aldgate → King's Cross (Circle/Metropolitan)\, then Nor
+ thern line to Camden Town. Camden Lock\, Stables Market\, Cyberdog\, lunch
+  from the stalls. 13:30 drink at The Dark Horse (rooftop terrace).\nMap: h
+ ttps://maps.google.com/?q=Camden+Market
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-09@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261015T143000
+DTEND;TZID=Europe/London:20261015T163000
+SUMMARY:🛶 Regent's Canal walk → Little Venice
+LOCATION:Regent's Canal\, Camden Lock\, London
+DESCRIPTION:~4 km towpath past the zoo and Regent's Park. Primrose Hill det
+ our +20 min. Then ~25 min walk to Portobello Road.\nMap: https://maps.goog
+ le.com/?q=Little+Venice+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-10@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261015T163000
+DTEND;TZID=Europe/London:20261015T190000
+SUMMARY:🏠 Notting Hill streets
+LOCATION:Portobello Road\, London
+DESCRIPTION:Lancaster Road\, St Luke's Mews\, Elgin Crescent. Street market
+  closes 13:00 on Thursdays\; shops and cafés stay open. Sunset ~18:10.\nM
+ ap: https://maps.google.com/?q=St+Luke%27s+Mews+London
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-11@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261015T190000
+DTEND;TZID=Europe/London:20261015T213000
+SUMMARY:🍽️ Dinner with Desi & Antoine · Notting Hill
+LOCATION:Notting Hill\, London
+DESCRIPTION:Pick one: Permit Room (186 Portobello Rd)\, Speedboat Bar (191 
+ Portobello Rd)\, Akub (27 Uxbridge St\, book). Home: Hammersmith & City fr
+ om Ladbroke Grove to Aldgate East.\nMap: https://maps.google.com/?q=Permit
+ +Room+Portobello
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-12@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261016T094500
+DTEND;TZID=Europe/London:20261016T124500
+SUMMARY:🌉 Tower Bridge → Borough Market → Bankside
+LOCATION:Tower Bridge\, London
+DESCRIPTION:09:45 check out\, bag into Wombat's luggage room. Tower Bridge\
+ , Shad Thames coffee\, Borough Market\, Southwark Cathedral\, the Globe\, 
+ Tate Modern\, Millennium Bridge to St Paul's.\nMap: https://maps.google.co
+ m/?q=Borough+Market
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-13@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261016T130000
+DTEND;TZID=Europe/London:20261016T144500
+SUMMARY:🏙️ Lunch with a view
+LOCATION:20 Fenchurch Street\, London
+DESCRIPTION:Sky Garden (Darwin Brasserie\, level 36\; booking = entry) or D
+ uck & Waffle (110 Bishopsgate\, 40th floor). Optional after: Horizon 22.\n
+ Map: https://maps.google.com/?q=Sky+Garden+20+Fenchurch+Street
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-14@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261016T151500
+DTEND;TZID=Europe/London:20261016T171500
+SUMMARY:🎨 Leadenhall → Spitalfields → Shoreditch
+LOCATION:Old Spitalfields Market\, London
+DESCRIPTION:Leadenhall Market\, Old Spitalfields\, street art on Brick Lane
+ \, Hanbury St and Redchurch St. Detroit Pizza\, 75 Commercial St. 17:15 co
+ llect the bag at Wombat's.\nMap: https://maps.google.com/?q=Old+Spitalfiel
+ ds+Market
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-15@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261016T174500
+DTEND;TZID=Europe/London:20261016T200000
+SUMMARY:🍺 Dinner: Prospect of Whitby
+LOCATION:Prospect of Whitby\, 57 Wapping Wall\, London E1W 3SH
+DESCRIPTION:Riverside pub with a terrace. ~20 min walk from Wombat's\, or O
+ verground Shadwell → Wapping. ~20:00 to Bromley together (Premier Inn\, 
+ Simpsons Road).\nMap: https://maps.google.com/?q=Prospect+of+Whitby+Wappin
+ g
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-16@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261017T090000
+DTEND;TZID=Europe/London:20261017T124500
+SUMMARY:🌊 White Cliffs of Dover (not final)
+LOCATION:White Cliffs of Dover Visitor Centre\, Langdon Cliffs\, CT16 1HJ
+DESCRIPTION:With Sashi and Laura. 09:00 leave Bromley (~1h30). Parking £6 
+ (NT members free)\, gates lock 19:00. Cliff-top walk to South Foreland Lig
+ hthouse\, ~55 min each way. Proper shoes + windproof layer.\nHeavy rain: C
+ anterbury only instead (leave ~10:00\, cathedral 11:15).\nMap: https://map
+ s.google.com/?q=White+Cliffs+of+Dover+Visitor+Centre
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-17@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261017T124500
+DTEND;TZID=Europe/London:20261017T141500
+SUMMARY:🐟 Lunch: The Coastguard (not final)
+LOCATION:The Coastguard\, Bay Hill\, St Margaret's Bay\, CT15 6DY
+DESCRIPTION:On the beach\, 10 min from the cliffs car park. Sashi can book 
+ once Saturday is settled\, or eat in Canterbury instead.\nMap: https://map
+ s.google.com/?q=The+Coastguard+St+Margaret%27s+Bay
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-18@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261017T150000
+DTEND;TZID=Europe/London:20261017T190000
+SUMMARY:⛪ Canterbury Cathedral + old town (not final)
+LOCATION:Canterbury Cathedral\, Canterbury
+DESCRIPTION:~35 min drive from St Margaret's Bay. Cathedral Sat 10:00–17:
+ 00\, last entry 16:00\, £18\; book online for fast-track entry. Choral Ev
+ ensong 17:30. Old town: Christ Church Gate\, Mercery Lane\, Westgate Tower
+ s. ~19:00 drive back to Bromley (~1h15).\nMap: https://maps.google.com/?q=
+ Canterbury+Cathedral
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-19@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261018T073000
+DTEND;TZID=Europe/London:20261018T091500
+SUMMARY:🚗 Drive to Stansted
+LOCATION:London Stansted Airport
+DESCRIPTION:Sashi drives\, ~1h30. Breakfast and check out at 07:00.
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+UID:london-2026-20@kparvanov.com
+DTSTAMP:20261011T190000Z
+DTSTART;TZID=Europe/London:20261018T113000
+DTEND;TZID=Europe/London:20261018T120000
+SUMMARY:🛫 Flight home
+LOCATION:London Stansted Airport
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

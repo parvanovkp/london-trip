@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>London Trip 13–18 Oct</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: same single-column day cards as the Crete program; header band, booking checklist, one card per day, steps on a time rail */
+:root{
+  --paper:#F2F4F3;      /* page: cool Portland-stone grey */
+  --card:#FFFFFF;
+  --ink:#1D2A31;        /* text */
+  --muted:#5D6D74;
+  --line:#D8DEDC;
+  --river-a:#1F3440;    /* header: the Thames at dusk */
+  --river-b:#2F4D5A;
+  --river-ink:#FFFFFF;
+  --river-soft:#C9D9DF;
+  --brick:#B0392C;      /* accent: times, chips, link underline */
+  --brick-soft:#E9C3BD;
+  --panel:#E3E8E5;      /* booking checklist */
+  --note-bg:#FBF3E2;
+  --note-fg:#76561A;
+  --solo:#E2EBEE; --solo-fg:#2F5563;
+  --duo:#F3E3E0;  --duo-fg:#8E2F24;
+  --trio:#E7EDDF; --trio-fg:#4C6A3A;
+  --travel-bg:#F7F9F8;
+  --font-display:'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body:'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11171A; --card:#192226; --ink:#E4EBED; --muted:#97A7AD; --line:#2A353A;
+    --river-a:#0C171C; --river-b:#1A2E37; --river-ink:#F2F6F7; --river-soft:#9FB7C0;
+    --brick:#E37A69; --brick-soft:#6A3A33; --panel:#1E292D;
+    --note-bg:#2A2416; --note-fg:#E3C584;
+    --solo:#1F3038; --solo-fg:#A9CBD7; --duo:#3A2522; --duo-fg:#F0B2A7; --trio:#26301F; --trio-fg:#B9D3A4;
+    --travel-bg:#162024; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11171A; --card:#192226; --ink:#E4EBED; --muted:#97A7AD; --line:#2A353A;
+  --river-a:#0C171C; --river-b:#1A2E37; --river-ink:#F2F6F7; --river-soft:#9FB7C0;
+  --brick:#E37A69; --brick-soft:#6A3A33; --panel:#1E292D;
+  --note-bg:#2A2416; --note-fg:#E3C584;
+  --solo:#1F3038; --solo-fg:#A9CBD7; --duo:#3A2522; --duo-fg:#F0B2A7; --trio:#26301F; --trio-fg:#B9D3A4;
+  --travel-bg:#162024; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font-body);font-size:16px;background:var(--paper);color:var(--ink);line-height:1.5}
+.wrap{max-width:820px;margin:0 auto;padding-inline:16px}
+a{color:inherit}
+a:focus-visible,input:focus-visible{outline:2px solid var(--brick);outline-offset:2px}
+
+header{background:linear-gradient(180deg,var(--river-a) 0%,var(--river-b) 100%);color:var(--river-ink);padding-block:34px 28px;margin-bottom:24px}
+header .wrap{display:flex;flex-direction:column;gap:10px}
+.kicker{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--river-soft);margin:0}
+h1{font-family:var(--font-display);font-weight:600;font-size:clamp(28px,5.4vw,42px);line-height:1.1;margin:0;text-wrap:balance}
+.sub{font-size:15.5px;color:var(--river-soft);max-width:62ch;margin:0}
+.sub b{color:var(--river-ink);font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+
+.who{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.who.solo{background:var(--solo);color:var(--solo-fg)}
+.who.duo{background:var(--duo);color:var(--duo-fg)}
+.who.trio{background:var(--trio);color:var(--trio-fg)}
+.who.travel{background:var(--panel);color:var(--muted)}
+
+.checklist{background:var(--panel);border-radius:14px;padding:18px 20px;margin-bottom:24px}
+.checklist h2{font-family:var(--font-display);font-weight:600;font-size:21px;margin:0 0 4px}
+.checklist .hint{font-size:13.5px;color:var(--muted);margin:0 0 10px}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.checks li{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.checks input{width:18px;height:18px;margin-top:3px;accent-color:var(--brick);flex:none}
+.checks label{min-width:0}
+.checks input:checked + label{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--brick-soft)}
+.checks .opt{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-left:4px}
+
+.days{display:flex;flex-direction:column;gap:14px}
+.day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 14px}
+.day.big{border-left:5px solid var(--brick)}
+.day.travel{background:var(--travel-bg)}
+.dayhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.datechip{background:var(--ink);color:var(--card);border-radius:8px;padding:3px 11px;font-weight:700;font-size:13px;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.day h3{font-family:var(--font-display);font-weight:600;font-size:19.5px;margin:0;text-wrap:balance;flex:1 1 260px;min-width:0}
+.stay{font-size:13.5px;color:var(--muted);margin:2px 0 0}
+.steps{list-style:none;margin:8px 0 0;padding:0}
+.steps li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;margin:8px 0;font-size:15px}
+.steps .t{font-weight:700;color:var(--brick);font-variant-numeric:tabular-nums}
+.steps a{font-weight:600;text-decoration:underline;text-decoration-color:var(--brick-soft);text-underline-offset:2px}
+.steps a:hover{text-decoration-color:var(--brick)}
+.steps .tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 6px;margin-left:4px;white-space:nowrap}
+.pick{margin:10px 0 2px;border-top:1px dashed var(--line);padding-top:10px}
+.pick h4{font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.picks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.option{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;min-width:0}
+.option b{display:block;font-size:15px}
+.option b a{text-decoration:underline;text-decoration-color:var(--brick-soft);text-underline-offset:2px}
+.option span{color:var(--muted)}
+.note{font-size:14px;color:var(--note-fg);background:var(--note-bg);border-radius:8px;padding:8px 11px;margin-top:10px}
+.note b{font-weight:700}
+
+footer{margin-block:26px 40px;font-size:13px;color:var(--muted);text-align:center}
+@media (max-width:480px){
+  .steps li{grid-template-columns:48px minmax(0,1fr);gap:10px;font-size:14.5px}
+  .day{padding:14px 14px 12px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+.icsbtn{display:block;text-align:center;background:var(--brick);color:#fff;border-radius:12px;padding:14px 18px;font-weight:700;font-size:15px;text-decoration:none;margin-bottom:10px}
+.icsbtn:hover{filter:brightness(1.08)}
+.icsnote{font-size:13px;color:var(--muted);margin:0 0 22px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <p class="kicker">London · Program · 13–18 October</p>
+    <h1>Five days in London</h1>
+    <p class="sub">Land at Stansted <b>Tuesday 18:15</b>, fly home <b>Sunday 11:30</b>. Three nights at Wombat's by Tower Bridge, two at Premier Inn Bromley. Wednesday and Thursday on my own until dinner; Friday and Saturday with Sashi and Laura.</p>
+    <div class="legend" aria-label="Who's along each day">
+      <span class="who solo">Solo</span>
+      <span class="who duo">Dinner with cousins</span>
+      <span class="who trio">With Sashi &amp; Laura</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<a class="icsbtn" href="london-trip.ics" download="london-trip.ics">📆 Add the program to your calendar (.ics)</a>
+<p class="icsnote"><b>iPhone:</b> open the link in Safari and choose “Add All”. <b>Android:</b> download, then open the file from the download notification. Otherwise: calendar.google.com → Settings → Import.</p>
+
+<section class="checklist" aria-labelledby="book">
+  <h2 id="book">Book this week, most urgent first</h2>
+  <p class="hint">Tick them off; the ticks stay on this device.</p>
+  <ul class="checks">
+    <li><input type="checkbox" id="c-eta"><label for="c-eta"><b>UK ETA</b> for the EU passport, £20 in the UK ETA app. Can take up to 72 hours, so apply today if it's not done.</label></li>
+    <li><input type="checkbox" id="c-marquis"><label for="c-marquis"><b>Marquis of Westminster, Wed ~19:00</b>: OpenTable or 020 7592 0249.</label></li>
+    <li><input type="checkbox" id="c-lunch"><label for="c-lunch"><b>Fri lunch with a view for three</b>: Sky Garden's Darwin Brasserie (the booking is the entry ticket) or Duck &amp; Waffle.</label></li>
+    <li><input type="checkbox" id="c-thu"><label for="c-thu"><b>Thu dinner in Notting Hill</b>: pick one of the three below and book.</label></li>
+    <li><input type="checkbox" id="c-nhm"><label for="c-nhm"><b>Natural History Museum, Wed 10:00</b>: free timed slot, skips the queue.</label></li>
+    <li><input type="checkbox" id="c-h22"><label for="c-h22"><b>Horizon 22, Fri ~14:45</b>: free slots for three, photo ID. <span class="opt">Optional</span></label></li>
+  </ul>
+</section>
+
+<div class="days">
+
+<article class="day travel" id="tue">
+  <div class="dayhead"><span class="datechip">Tue 13.10</span><h3>Arrival</h3><span class="who travel">Travel</span></div>
+  <p class="stay">Sleep: <a href="https://www.google.com/maps/search/?api=1&amp;query=Wombat%27s+City+Hostel+London" target="_blank" rel="noopener">Wombat's City Hostel</a>, 7 Dock Street E1</p>
+  <ul class="steps">
+    <li><span class="t">18:15</span><span>Land at Stansted. Allow 30–45 min for passport control and bags.</span></li>
+    <li><span class="t">19:00</span><span>Stansted Express to Liverpool Street, 48 min. Buy the ticket at the station machines or desk (~£20.70; Oyster doesn't cover Stansted).</span></li>
+    <li><span class="t">19:50</span><span>Liverpool Street → Wombat's: 20 min on foot, or one stop to Aldgate East plus 8 min.</span></li>
+    <li><span class="t">20:30</span><span>Dinner on <a href="https://www.google.com/maps/search/?api=1&amp;query=Brick+Lane+London" target="_blank" rel="noopener">Brick Lane</a> (15 min walk) or at the hostel bar, then <a href="https://www.google.com/maps/search/?api=1&amp;query=Tower+Bridge+London" target="_blank" rel="noopener">Tower Bridge</a> lit up, 10 min away.</span></li>
+  </ul>
+</article>
+
+<article class="day" id="wed">
+  <div class="dayhead"><span class="datechip">Wed 14.10</span><h3>Museum to Westminster on foot, dinner in Pimlico</h3><span class="who solo">Solo</span><span class="who duo">Dinner: Sashi &amp; Desi</span></div>
+  <ul class="steps">
+    <li><span class="t">09:30</span><span>Tower Hill → South Kensington, District or Circle line direct (~25 min).</span></li>
+    <li><span class="t">10:00</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Natural+History+Museum+London" target="_blank" rel="noopener">Natural History Museum</a>: free, opens 10:00. Hintze Hall and the dinosaurs first; two hours covers the highlights.</span></li>
+    <li><span class="t">12:15</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Royal+Albert+Hall" target="_blank" rel="noopener">Royal Albert Hall</a> from outside and the <a href="https://www.google.com/maps/search/?api=1&amp;query=Albert+Memorial" target="_blank" rel="noopener">Albert Memorial</a> opposite. Lunch around South Kensington.</span></li>
+    <li><span class="t">13:00</span><span>Kensington Gardens → <a href="https://www.google.com/maps/search/?api=1&amp;query=Serpentine+Hyde+Park" target="_blank" rel="noopener">Hyde Park</a> past the Serpentine to Hyde Park Corner (~35 min walk).</span></li>
+    <li><span class="t">14:15</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Buckingham+Palace" target="_blank" rel="noopener">Buckingham Palace</a> via Constitution Hill, then <a href="https://www.google.com/maps/search/?api=1&amp;query=St+James%27s+Park+London" target="_blank" rel="noopener">St James's Park</a>; the bridge over the lake has the classic palace view.</span></li>
+    <li><span class="t">15:15</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Big+Ben+London" target="_blank" rel="noopener">Big Ben</a>, Parliament and <a href="https://www.google.com/maps/search/?api=1&amp;query=Westminster+Abbey" target="_blank" rel="noopener">Westminster Abbey</a>; the London Eye is across Westminster Bridge.</span></li>
+    <li><span class="t">16:15</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=National+Gallery+London" target="_blank" rel="noopener">National Gallery</a> on Trafalgar Square, free, open to 18:00.</span></li>
+    <li><span class="t">17:45</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Leicester+Square+London" target="_blank" rel="noopener">Leicester Square</a> → <a href="https://www.google.com/maps/search/?api=1&amp;query=Chinatown+London" target="_blank" rel="noopener">Chinatown</a>, a few minutes apart.</span></li>
+    <li><span class="t">19:00</span><span>Dinner with Sashi and Desi at the <a href="https://www.google.com/maps/search/?api=1&amp;query=Marquis+of+Westminster+50+Warwick+Way+London" target="_blank" rel="noopener">Marquis of Westminster</a>, 50 Warwick Way: District or Circle from Embankment to Victoria (3 stops), then 8 min on foot. Gastropub, British and modern European.</span></li>
+  </ul>
+  <div class="note"><b>Changing of the Guard?</b> Usually Mon, Wed and Fri at 11:00. To catch it, start at the palace by 10:30 and walk west to the museum instead; check the Household Division calendar the day before.</div>
+</article>
+
+<article class="day big" id="thu">
+  <div class="dayhead"><span class="datechip">Thu 15.10</span><h3>Camden, the canal and Notting Hill</h3><span class="who solo">Solo</span><span class="who duo">Dinner: Desi &amp; Antoine</span></div>
+  <ul class="steps">
+    <li><span class="t">08:00</span><span>Optional early start: <a href="https://www.google.com/maps/search/?api=1&amp;query=Old+Spitalfields+Market" target="_blank" rel="noopener">Old Spitalfields</a> Thursday antiques market, 15 min from the hostel.</span></li>
+    <li><span class="t">10:00</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Garden+at+120+Fenchurch+Street" target="_blank" rel="noopener">The Garden at 120</a>, 120 Fenchurch St: free rooftop garden from Laura's list, no booking, airport-style security. 10 min walk from Wombat's; half an hour is plenty.</span></li>
+    <li><span class="t">10:45</span><span>Head to Camden Town, ~30 min: Circle or Metropolitan from Aldgate to King's Cross, then Northern line.</span></li>
+    <li><span class="t">11:15</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Camden+Market" target="_blank" rel="noopener">Camden Market</a>: Camden Lock, the Stables Market and <a href="https://www.google.com/maps/search/?api=1&amp;query=Cyberdog+Camden" target="_blank" rel="noopener">Cyberdog</a>. Lunch from the food stalls.</span></li>
+    <li><span class="t">13:30</span><span>A drink at <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Dark+Horse+Camden+Stables+Market" target="_blank" rel="noopener">The Dark Horse</a>: pub downstairs, open-air rooftop terrace above.</span></li>
+    <li><span class="t">14:30</span><span>Regent's Canal towpath from Camden Lock to <a href="https://www.google.com/maps/search/?api=1&amp;query=Little+Venice+London" target="_blank" rel="noopener">Little Venice</a>, ~4 km past the zoo and Regent's Park. Primrose Hill detour for the skyline: +20 min.</span></li>
+    <li><span class="t">16:00</span><span>Little Venice → <a href="https://www.google.com/maps/search/?api=1&amp;query=Portobello+Road+London" target="_blank" rel="noopener">Portobello Road</a>, ~25 min walk.</span></li>
+    <li><span class="t">16:30</span><span>Notting Hill's pastel streets: Lancaster Road, <a href="https://www.google.com/maps/search/?api=1&amp;query=St+Luke%27s+Mews+London" target="_blank" rel="noopener">St Luke's Mews</a>, Elgin Crescent. The street market closes at 13:00 on Thursdays; shops and cafés stay open. Sunset ~18:10.</span></li>
+    <li><span class="t">19:00</span><span>Dinner with Desi and Antoine (pick below). Home on the Hammersmith &amp; City line from Ladbroke Grove straight to Aldgate East.</span></li>
+  </ul>
+  <div class="pick">
+    <h4>Dinner: pick one</h4>
+    <div class="picks">
+      <div class="option"><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Permit+Room+Portobello+186+Portobello+Road" target="_blank" rel="noopener">Permit Room</a></b><span>Dishoom's all-day Bombay bar-café, 186 Portobello Rd. Mid-priced, walk-ins too.</span></div>
+      <div class="option"><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Speedboat+Bar+Notting+Hill" target="_blank" rel="noopener">Speedboat Bar</a></b><span>Loud, fun Thai, 191 Portobello Rd. Same menu as the Soho original.</span></div>
+      <div class="option"><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Akub+27+Uxbridge+Street+London" target="_blank" rel="noopener">Akub</a></b><span>Palestinian sharing plates by Notting Hill Gate. ~£50–80 a head; book.</span></div>
+    </div>
+  </div>
+</article>
+
+<article class="day" id="fri">
+  <div class="dayhead"><span class="datechip">Fri 16.10</span><h3>Along the Thames, lunch up high, the East End</h3><span class="who trio">With Sashi &amp; Laura</span></div>
+  <p class="stay">Sleep: <a href="https://www.google.com/maps/search/?api=1&amp;query=Premier+Inn+London+Bromley+Simpsons+Road" target="_blank" rel="noopener">Premier Inn London Bromley</a>, 4 min from Bromley South</p>
+  <ul class="steps">
+    <li><span class="t">09:45</span><span>Check out, bag into Wombat's luggage room. Meet at Tower Hill.</span></li>
+    <li><span class="t">10:00</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Tower+Bridge+London" target="_blank" rel="noopener">Tower Bridge</a>, then coffee in the cobbled warehouse lanes of <a href="https://www.google.com/maps/search/?api=1&amp;query=Shad+Thames" target="_blank" rel="noopener">Shad Thames</a>.</span></li>
+    <li><span class="t">10:45</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Borough+Market" target="_blank" rel="noopener">Borough Market</a> along the river past HMS Belfast. Browse and snack; save room.</span></li>
+    <li><span class="t">11:45</span><span>Bankside: Southwark Cathedral, <a href="https://www.google.com/maps/search/?api=1&amp;query=Shakespeare%27s+Globe" target="_blank" rel="noopener">the Globe</a>, Tate Modern's riverfront, then over the <a href="https://www.google.com/maps/search/?api=1&amp;query=Millennium+Bridge+London" target="_blank" rel="noopener">Millennium Bridge</a> to St Paul's (~2 km).</span></li>
+    <li><span class="t">13:00</span><span>Lunch with a view (pick below), ~20 min walk from St Paul's.</span></li>
+    <li><span class="t">14:45</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Horizon+22+Bishopsgate" target="_blank" rel="noopener">Horizon 22</a>, 58th floor, the highest free view in London <span class="tag">Optional</span></span></li>
+    <li><span class="t">15:15</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Leadenhall+Market" target="_blank" rel="noopener">Leadenhall Market</a> → Spitalfields → street art on Brick Lane, Hanbury and <a href="https://www.google.com/maps/search/?api=1&amp;query=Redchurch+Street+London" target="_blank" rel="noopener">Redchurch Street</a>. <a href="https://www.google.com/maps/search/?api=1&amp;query=Detroit+Pizza+Spitalfields" target="_blank" rel="noopener">Detroit Pizza</a> if anyone's hungry.</span></li>
+    <li><span class="t">17:15</span><span>Collect the bag at Wombat's.</span></li>
+    <li><span class="t">17:45</span><span>Dinner by the river at the <a href="https://www.google.com/maps/search/?api=1&amp;query=Prospect+of+Whitby+Wapping" target="_blank" rel="noopener">Prospect of Whitby</a>, a Grade II-listed Wapping pub with a riverside terrace. ~20 min walk, or Overground Shadwell → Wapping.</span></li>
+    <li><span class="t">20:00</span><span>To Bromley together.</span></li>
+  </ul>
+  <div class="pick">
+    <h4>Lunch with a view: pick one</h4>
+    <div class="picks">
+      <div class="option"><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Sky+Garden+20+Fenchurch+Street" target="_blank" rel="noopener">Sky Garden</a></b><span>Darwin Brasserie on level 36. The table booking replaces the free entry ticket.</span></div>
+      <div class="option"><b><a href="https://www.google.com/maps/search/?api=1&amp;query=Duck+and+Waffle+110+Bishopsgate" target="_blank" rel="noopener">Duck &amp; Waffle</a></b><span>40th floor of 110 Bishopsgate, floor-to-ceiling windows. £41+ a head.</span></div>
+    </div>
+  </div>
+</article>
+
+<article class="day big" id="sat">
+  <div class="dayhead"><span class="datechip">Sat 17.10</span><h3>White Cliffs of Dover and Canterbury</h3><span class="who trio">With Sashi &amp; Laura</span></div>
+  <p class="stay">Not final yet: Sashi and Laura will decide closer to the day.</p>
+  <ul class="steps">
+    <li><span class="t">09:00</span><span>Leave Bromley for Dover by car (~1 h 30 min).</span></li>
+    <li><span class="t">10:30</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=White+Cliffs+of+Dover+National+Trust+Visitor+Centre" target="_blank" rel="noopener">White Cliffs visitor centre</a> (National Trust, CT16 1HJ). Parking £6, free for members; gates lock at 19:00.</span></li>
+    <li><span class="t">10:45</span><span>Cliff-top walk to <a href="https://www.google.com/maps/search/?api=1&amp;query=South+Foreland+Lighthouse" target="_blank" rel="noopener">South Foreland Lighthouse</a>, ~55 min each way; France on a clear day. Lighthouse and Mrs Knott's Tearoom open 11:00–17:00 on Saturdays this month. Turn back earlier for a shorter walk.</span></li>
+    <li><span class="t">12:45</span><span>Lunch on the beach at <a href="https://www.google.com/maps/search/?api=1&amp;query=The+Coastguard+St+Margaret%27s+Bay" target="_blank" rel="noopener">The Coastguard</a>, St Margaret's Bay, 10 min from the car park. Sashi can book once the day is settled, or eat in Canterbury instead.</span></li>
+    <li><span class="t">14:15</span><span>Drive to Canterbury (~35 min).</span></li>
+    <li><span class="t">15:00</span><span><a href="https://www.google.com/maps/search/?api=1&amp;query=Canterbury+Cathedral" target="_blank" rel="noopener">Canterbury Cathedral</a>: Saturdays 10:00–17:00, last entry 16:00, £18. Booking online gets fast-track entry. Choral Evensong at 17:30.</span></li>
+    <li><span class="t">16:30</span><span>Old town: Christ Church Gate, <a href="https://www.google.com/maps/search/?api=1&amp;query=Mercery+Lane+Canterbury" target="_blank" rel="noopener">Mercery Lane</a>, the River Stour and the <a href="https://www.google.com/maps/search/?api=1&amp;query=Westgate+Towers+Canterbury" target="_blank" rel="noopener">Westgate Towers</a>. Early dinner there.</span></li>
+    <li><span class="t">19:00</span><span>Drive back to Bromley (~1 h 15 min).</span></li>
+  </ul>
+  <div class="pick">
+    <h4>If it rains heavily: Canterbury only</h4>
+    <ul class="steps">
+      <li><span class="t">10:00</span><span>Leave Bromley (~1 h 15 min).</span></li>
+      <li><span class="t">11:15</span><span>Canterbury Cathedral; allow about two hours inside.</span></li>
+      <li><span class="t">13:30</span><span>Lunch in an old-town pub, then the lanes and shops around Mercery Lane.</span></li>
+      <li><span class="t">17:30</span><span>Choral Evensong in the cathedral, then dinner and the drive home.</span></li>
+    </ul>
+  </div>
+  <div class="note"><b>Bring:</b> proper shoes and a windproof layer for the cliffs; the path is exposed and muddy after rain.</div>
+</article>
+
+<article class="day travel" id="sun">
+  <div class="dayhead"><span class="datechip">Sun 18.10</span><h3>Home</h3><span class="who travel">Travel</span></div>
+  <ul class="steps">
+    <li><span class="t">07:00</span><span>Breakfast and check out.</span></li>
+    <li><span class="t">07:30</span><span>Sashi drives me to <a href="https://www.google.com/maps/search/?api=1&amp;query=London+Stansted+Airport" target="_blank" rel="noopener">Stansted</a>, ~1 h 30 min.</span></li>
+    <li><span class="t">11:30</span><span>Flight home.</span></li>
+  </ul>
+</article>
+
+</div>
+
+<footer>Put together 11.10 · Changes? Say so in the chat.</footer>
+
+</div>
+
+<script>
+(function(){
+  var KEY = 'london-trip-checks';
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { saved = {}; }
+  document.querySelectorAll('.checks input[type=checkbox]').forEach(function(box){
+    if (saved[box.id]) box.checked = true;
+    box.addEventListener('change', function(){
+      saved[box.id] = box.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+})();
+</script>
+</body>
+</html>
